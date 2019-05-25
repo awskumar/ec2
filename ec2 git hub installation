@@ -1,0 +1,57 @@
+GIT CONFIGURATION IN LOCALHOST
+
+1. Launch EC2 Instacne 
+		with RED-HAT operating system
+		
+2. Login the Ec2  with putty.exe
+	
+	Use  .ppk key for windows  
+                  (or) 
+	 User  .pem key for Linux 
+	 
+3. Run the below command in the Instance
+
+	sudo su
+	yum update -y
+	
+4. GIT  installation steps
+		yum install git -y
+		git version
+		
+5.  GIT CONFIGURATION
+     git config --global user.name "XXXXX"
+	 git config --global user.email "XXXXX@ gmail.com"
+	 git config --global push.detail simple
+	 
+6. CHECK GIT CONFIGURATION
+	git config --list
+
+7.  GIT CLONE WITH MASTER STEPS
+		Create directory  
+				mkdir <give any name>
+		initiate the directory as git repository  (be inside the created directory)
+				git init  --bare
+				
+		create a file inside the directory
+				touch <file name>
+		check status of the created file
+				git status
+		add the file to statging area
+				git add
+		commit the file to local repository
+				git commit -m "commit message"
+8. CLONE THE GIT REPOSITORY
+
+			git clone "get the link from the repository"  (which is shown in right side of the repository clone/download button)
+
+9. PUSH THE FILE TO GIT HUB
+
+       git push -u orgin master
+	   or 
+	   git push origin master
+	   
+	   
+
+		
+		
+		
