@@ -1,0 +1,57 @@
+
+
+EC2 MACHINE  JAVA INSTALLATION
+
+
+
+
+JAVA INSTALLATION
+
+1.  Launch Red-hat Linux EC2 Instance
+     with port  SSH  HTTP   TCP 8080  
+
+2. INSTALL JAVA AND SET PATH
+
+				sudo yum install java-1.8.0-openjdk.x86_64
+
+3. CHECK JAVA INSTALLED  CHECK / CHANGE JAVA VERSION
+
+				sudo update-alternatives --config java
+
+4. FIND THE JAVA 
+   
+				file $(which java)
+__________________________________________________________________
+you will get symbolic link to  etc/alternatives/java
+
+    file /etc/alternatives/java 
+
+you will get symbolic link to "_LINK 1____________"
+
+     file  "LINK 1" 
+
+you will get link 2  with the elf 64-bit and linux details
+
+this  means  PATH IS OK
+
+        /usr/lib/jvm/jdk-1.8.0-openjdk.x86_64/bin
+_______________________________________________________________________
+  5. JAVA PATH SET
+
+command (be in root / home directory)
+
+	ls -al
+	use editor  vi / nano
+	vi .bashrc
+add the below lines
+		export JAVA_HOME="/usr/lib/jvm/jdk-1.8.0-openjdk.x86_64"
+		PATH=$JAVA_HOME/bin:$PATH
+save and exit  with (esc :wq!)
+  
+6. JAVA PATH CHECKING 
+  
+	echo $ JAVA_HOME
+	echo $PATH
+	
+	
+  
