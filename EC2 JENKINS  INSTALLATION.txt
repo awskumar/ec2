@@ -1,0 +1,72 @@
+EC2 MACHINE  JENKINS INSTALLATION
+
+JAVA INSTALLATION
+
+1.  Launch Red-hat Linux EC2 Instance
+     with port  SSH  HTTP   TCP 8080  
+
+2. Connect via    SSH      or     PUTTY.EXE
+        USE    .PEM KEY           .PPK KEY
+
+3. Run the Below commands
+
+   sudo su
+   yum install -y
+   yum install wget -y
+
+4. Jenkin Installation
+
+   Download the latest jenkin code package
+
+   sudo wget -O /etc/yum.repos.d/jenkins.repo http://pkg.jenkins.io/redhat/jenkins.repo
+
+5.import key file from jenkins CI to enable installation
+
+	sudo rpm --import https://pkg.jenkins.io/redhat/jenkins.io.key
+
+6.Install jenkins
+
+	sudo yum install jenkins -y
+
+7.Start Jenkins as a service
+
+	sudo service jenkins start
+
+8.Check Jenkins Status
+
+	sudo service jenkins status
+
+9.GO TO internet find the  jenkins in the browser
+
+	local host:8080   or  EC2 public IP:8080
+
+10. you will find the link to get the secret key
+
+	copy the link and use 
+
+11. Extract the key 
+	cat <copied link >
+	key will be displayed
+	copy and paste in browser
+
+	use the key to login JENKINS  AND ADD SUITABLE PULGINS .
+
+12.TO CHANGE THE PORT IN JENKINS  8080  TO  8090   (OR ANY OTHER SUITABLE PROT )
+
+	check the port existing 
+	cat /etc/sysconfig/jenkins
+	jenkins -port 8080
+
+13.CHANGE THE JENKINS PORT VI editior
+
+	vi /etc/sysconfig/jenkins
+   EDIT	jenkins -port 8090
+	save and exit   (ESC key :wq!)
+
+14. START JENKINS SERVICE 
+
+	sudo service jenkins start 
+
+15. REMOVE JENKINS FORM EC2 INSTANCE
+
+	sudo yum remove jenkins -y 
